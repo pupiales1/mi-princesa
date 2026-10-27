@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>27 — Para mi princesa ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+:root{--pink:#ff6f91;--rose:#ff9db2;--cream:#fff4f7;--dark:#09070c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--dark);color:white;font-family:Montserrat,sans-serif}
+body{overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 50% 20%,#2b1224 0,#100914 38%,#09070c 75%)}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;opacity:.6;animation:twinkle 3s infinite}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.5)}}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+.heart{position:absolute;bottom:-30px;color:#ff7f9d;animation:float 5s linear forwards;opacity:.75}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+section{min-height:100vh;display:none;align-items:center;justify-content:center;padding:40px 20px}
+section.active{display:flex;animation:fade .8s ease}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.card{width:min(900px,100%);text-align:center}
+.kicker{letter-spacing:5px;text-transform:uppercase;font-size:.72rem;color:#ff9db2}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;margin:12px 0}
+h1{font-size:clamp(4rem,14vw,9rem);line-height:.8}
+h2{font-size:clamp(2.7rem,7vw,5rem)}
+p{line-height:1.8;color:#e7dce1;max-width:650px;margin:15px auto}
+button{border:1px solid rgba(255,157,178,.55);background:rgba(255,255,255,.04);color:white;padding:14px 27px;border-radius:999px;cursor:pointer;font-family:Montserrat;transition:.3s;margin:12px 5px}
+button:hover{background:#ff6f91;color:#160a10;transform:translateY(-2px);box-shadow:0 10px 30px #ff6f9140}
+.glow{color:#ff9db2;text-shadow:0 0 30px #ff477766}
+.secret{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:#fff}
+.number{font-size:clamp(8rem,30vw,18rem);font-family:"Cormorant Garamond";line-height:.7;color:#ff8faa;text-shadow:0 0 70px #ff477755}
+.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:35px auto;max-width:720px}
+.photo{aspect-ratio:1/1;border:1px solid #ffffff18;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#261521,#120c13);position:relative;cursor:pointer}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{position:absolute;inset:auto 0 0;padding:14px;background:linear-gradient(transparent,#000b);font-size:.8rem}
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}
+.trait{min-height:130px;padding:25px 15px;border-radius:20px;border:1px solid #ffffff18;background:#ffffff05;cursor:pointer;transition:.35s;display:flex;flex-direction:column;justify-content:center}
+.trait:hover{transform:translateY(-6px);border-color:#ff8faa66;background:#ff8faa0c}
+.trait b{font-family:"Cormorant Garamond";font-size:1.45rem;font-weight:600}
+.trait small{color:#bbaeb5;margin-top:8px}
+.timeline{margin:35px auto;max-width:650px;text-align:left}
+.event{border-left:1px solid #ff8faa66;padding:0 0 30px 25px;position:relative}
+.event:before{content:"";width:10px;height:10px;border-radius:50%;background:#ff8faa;position:absolute;left:-5px;top:5px;box-shadow:0 0 15px #ff8faa}
+.event h3{margin:0 0 6px;font-family:"Cormorant Garamond";font-size:1.7rem}
+.event p{margin:0}
+.letter{background:#fff7fa;color:#38232b;padding:35px 28px;border-radius:5px;max-width:700px;margin:25px auto;box-shadow:0 20px 80px #ff47771c;text-align:left;font-family:"Cormorant Garamond";font-size:1.3rem;line-height:1.7}
+.letter strong{color:#a83358}
+#music{position:fixed;right:18px;bottom:18px;z-index:20;display:none}
+.hint{font-size:.75rem;color:#9f9098;margin-top:25px}
+@media(max-width:650px){.traits{grid-template-columns:1fr 1fr}.photo-grid{gap:10px}.letter{font-size:1.15rem}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="hearts"></div>
+
+<section id="s1" class="active"><div class="card">
+<div class="kicker">una pequeña sorpresa</div>
+<h1>Mi<br><span class="glow">princesa</span></h1>
+<p>Hay algo que preparé para ti. Pero tendrás que descubrirlo poco a poco.</p>
+<button onclick="go(2)">Comenzar ✨</button>
+</div></section>
+
+<section id="s2"><div class="card">
+<div class="kicker">pista #01</div>
+<div class="number">27</div>
+<h2>¿Por qué este número?</h2>
+<p>Porque desde hace cuatro meses, cada 27 tiene un significado mucho más bonito para mí.</p>
+<button onclick="go(3)">Descubrir →</button>
+</div></section>
+
+<section id="s3"><div class="card">
+<div class="kicker">pista #02</div>
+<h2>Todo comenzó...</h2>
+<p>Hay muchos días que pasan sin dejar huella. Pero hay uno que cambia todo.</p>
+<div class="secret">“El día que te conocí.” ❤️</div>
+<p>Y sin saberlo, ese día empezó una de las historias más bonitas que me ha tocado vivir.</p>
+<button onclick="go(4)">Continuar 🌙</button>
+</div></section>
+
+<section id="s4"><div class="card">
+<div class="kicker">nuestros recuerdos</div>
+<h2>4 meses · 4 recuerdos</h2>
+<p>Toca cada fotografía para descubrir el pequeño mensaje escondido.</p>
+<div class="photo-grid">
+<div class="photo" onclick="photo(0)"><img src="foto1.jpg" alt="Nuestro recuerdo 1" onerror="this.style.display='none'"><span id="p0">Mes 1 · toca aquí</span></div>
+<div class="photo" onclick="photo(1)"><img src="foto2.jpg" alt="Nuestro recuerdo 2" onerror="this.style.display='none'"><span id="p1">Mes 2 · toca aquí</span></div>
+<div class="photo" onclick="photo(2)"><img src="foto3.jpg" alt="Nuestro recuerdo 3" onerror="this.style.display='none'"><span id="p2">Mes 3 · toca aquí</span></div>
+<div class="photo" onclick="photo(3)"><img src="foto4.jpg" alt="Nuestro recuerdo 4" onerror="this.style.display='none'"><span id="p3">Mes 4 · toca aquí</span></div>
+</div>
+<button onclick="go(5)">Hay algo más... 💌</button>
+</div></section>
+
+<section id="s5"><div class="card">
+<div class="kicker">lo que encontré en ti</div>
+<h2>Hay cosas de ti que adoro.</h2>
+<p>Toca cada tarjeta. Algunas palabras esconden mucho más de lo que parece.</p>
+<div class="traits">
+<div class="trait" onclick="reveal(this,'La forma en que eres, auténtica y especial.')"><b>Tu forma de ser</b><small>toca para revelar</small></div>
+<div class="trait" onclick="reveal(this,'Me encanta cómo ves las cosas y la manera tan tuya de entender el mundo.')"><b>Tu manera de pensar</b><small>toca para revelar</small></div>
+<div class="trait" onclick="reveal(this,'La forma en que das cariño hace que me sienta muy afortunado.')"><b>Tu forma de amar</b><small>toca para revelar</small></div>
+<div class="trait" onclick="reveal(this,'Tu carisma tiene esa capacidad de hacer más bonito cualquier momento.')"><b>Tu carisma</b><small>toca para revelar</small></div>
+<div class="trait" onclick="reveal(this,'Tu amabilidad dice muchísimo de la persona tan bonita que eres.')"><b>Tu amabilidad</b><small>toca para revelar</small></div>
+<div class="trait" onclick="reveal(this,'Tu inteligencia es una de esas cosas que admiro muchísimo de ti.')"><b>Tu inteligencia</b><small>toca para revelar</small></div>
+</div>
+<button onclick="go(6)">Escuchar nuestro momento 🎵</button>
+</div></section>
+
+<section id="s6"><div class="card">
+<div class="kicker">ahora sí...</div>
+<h2>Esta canción me hace pensar en ti.</h2>
+<p>Antes de continuar, dale play. ❤️</p>
+<button onclick="playSong()">▶ Reproducir “Pero Te Conocí”</button>
+<p class="hint">La página no incluye la canción para respetar derechos de autor. Puedes añadir tu propio archivo de audio.</p>
+<button onclick="go(7)">Continuar →</button>
+</div></section>
+
+<section id="s7"><div class="card">
+<div class="kicker">última sorpresa</div>
+<h2>Pero todavía falta algo...</h2>
+<p>He escondido una última cosa para ti.</p>
+<div style="font-size:6rem;cursor:pointer;filter:drop-shadow(0 0 25px #ff6f91)" onclick="openGift()">🎁</div>
+<p id="giftHint">Toca el regalo.</p>
+<div id="letterWrap" style="display:none">
+<div class="letter">
+<p>Mi princesa:</p>
+<p>Hoy celebramos 4 meses, pero yo celebro mucho más que una fecha.</p>
+<p>Celebro el día en que te conocí, cada conversación, cada risa, cada momento y todas esas pequeñas cosas que hacen que estar contigo sea tan especial.</p>
+<p>Admiro <strong>tu forma de ser, tu manera de pensar, tu forma de amar, tu carisma, tu amabilidad y tu inteligencia</strong>.</p>
+<p>Gracias por estos cuatro meses. Espero que este sea solamente el comienzo de muchos recuerdos más.</p>
+<p style="text-align:center;font-size:1.8rem"><strong>Felices 4 meses, mi princesa. ❤️</strong></p>
+<p style="text-align:center">27 · ∞</p>
+</div>
+<button onclick="go(8)">Hay una última pantalla...</button>
+</div>
+</div></section>
+
+<section id="s8"><div class="card">
+<div class="kicker">fin de la sorpresa</div>
+<h1>27 <span class="glow">∞</span></h1>
+<h2>Te elegiría una y otra vez.</h2>
+<p>Gracias por estos 4 meses, mi princesa. ❤️</p>
+<button onclick="go(1)">Volver al comienzo</button>
+</div></section>
+
+<audio id="song" src="cancion.mp3"></audio>
+<script>
+for(let i=0;i<100;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';document.getElementById('stars').appendChild(s)}
+let current=1;
+function go(n){document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');current=n;window.scrollTo(0,0);if(n===6) document.getElementById('music').style.display='block';}
+const messages=[
+'Un recuerdo que guardaría para siempre. ❤️',
+'Qué bonito fue seguir construyendo esto contigo.',
+'Cada momento contigo terminó siendo especial.',
+'Y aquí estamos: cuatro meses después. ❤️'
+];
+function photo(i){document.getElementById('p'+i).textContent=messages[i];heartBurst(8)}
+function reveal(el,text){el.innerHTML='<b>❤️</b><small>'+text+'</small>';el.style.borderColor='#ff8faa88';}
+function heartBurst(n=5){for(let i=0;i<n;i++){setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='❤';h.style.left=(35+Math.random()*30)+'%';h.style.fontSize=(12+Math.random()*20)+'px';h.style.animationDuration=(3+Math.random()*2)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),6000)},i*120)}}
+function playSong(){const a=document.getElementById('song');a.play().catch(()=>alert('Añade un archivo llamado "cancion.mp3" en la misma carpeta que esta página.'));heartBurst(18)}
+function openGift(){document.getElementById('giftHint').textContent='Sabía que lo ibas a abrir... ❤️';document.querySelector('#letterWrap').style.display='block';heartBurst(30)}
+setInterval(()=>{if(Math.random()<.25)heartBurst(1)},2500)
+</script>
+</body>
+</html>
